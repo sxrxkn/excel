@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
@@ -15,7 +14,8 @@ module.exports = {
   rules: {
     'semi': 'off',
     'comma-dangle': 'off',
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'linebreak-style': 'off'
   }
 }
 
