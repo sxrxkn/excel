@@ -14,14 +14,19 @@ function createCol(el) {
   return `
     <div class="column">
         ${el}
+        <div class='col-resize' data-resize='col'></div>
     </div>
     `
 }
 
 function createRow(content, info = '') {
+  const resizer = info ? `<div class='row-resize' data-resize='row'></div>` : ''
   return `
     <div class='row'>
-        <div class='row-info'>${info}</div>
+        <div class='row-info'>
+        ${info}
+        ${resizer}
+        </div>
             <div class='row-data'>
                 ${content}
             </div>
@@ -42,8 +47,6 @@ export function createTable(rowsCount = 15) {
       .join('')
 
   rows.push(createRow(cols))
-
-  console.log(rows.join(''))
 
   for (let i = 1; i <= rowsCount; i++) {
     const cells = new Array(colsCount)
